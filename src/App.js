@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './Fasticon-Hand-Draw-Iphone-Settings.ico';
-import './App.css';
+import logo from '../public/img/Fasticon-Hand-Draw-Iphone-Settings.ico';
+import '../public/css/App.css';
 import ContactList from './ContactList';
 
 class App extends Component {
