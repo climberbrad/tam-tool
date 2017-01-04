@@ -3,6 +3,10 @@ import logo from '../public/img/Fasticon-Hand-Draw-Iphone-Settings.ico';
 import '../public/css/App.css';
 import ContactList from './ContactList';
 
+var Highcharts = require('highcharts');
+
+require('highcharts/modules/funnel')(Highcharts);
+
 class App extends Component {
 
   constructor(props) {

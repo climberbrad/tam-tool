@@ -9,7 +9,6 @@ class ContactList extends Component {
             search: '',
             contacts: props.contacts
         };
-
     }
 
     updateSearch(event) {
@@ -17,7 +16,6 @@ class ContactList extends Component {
     }
 
     render() {
-
         let filteredContacts = this.state.contacts.filter((contact) => {
                 return contact.name.indexOf(this.state.search) !== -1;
             }

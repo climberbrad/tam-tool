@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import ContactLink from './ContactLink';
 
-const Contact = ({contact}) => <div><a href="">{contact.name}</a> {contact.phone}</div>
+const Contact = ({contact}) => <ContactLink contact={contact}/>
 
 export default Contact;
