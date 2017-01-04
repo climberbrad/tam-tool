@@ -24,7 +24,7 @@ class App extends Component {
           <h2>{this.state.message}</h2>
         </div>
         <p className="App-intro">
-            <h1>Customers</h1>
+            <h1>Organizations</h1>
             <ContactList contacts={this.props.contacts} />
         </p>
       </div>

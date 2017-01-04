@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Contact from './Contact';
+import ContactLink from './ContactLink';
 
 class ContactList extends Component {
 
@@ -27,7 +27,7 @@ class ContactList extends Component {
                        onChange={this.updateSearch.bind(this)}/>
 
                 {filteredContacts.map((contact) => {
-                    return <Contact contact={contact} key={contact.id}/>
+                    return <ContactLink contact={contact} key={contact.id}/>
                 })}
             </div>
         )
