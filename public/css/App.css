@@ -22,3 +22,22 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+#leftcolumn {
+  background: #FFFFFF;
+  width: 150px;
+  float: left;
+}
+
+#content {
+  float: left;
+  background: #FFFFFF;
+  width: 850px;
+}
+
+#searchBox {
+  text-align: center;
+  color: black;
+  padding: 20px;
+}
+

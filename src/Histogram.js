@@ -15,22 +15,18 @@ var config = {
 class Histogram extends Component {
     constructor(props) {
         super(props)
+        this.focus = this.focus.bind(this);
+    }
+
+    focus() {
+        // Explicitly focus the text input using the raw DOM API
+        this.textInput.focus();
     }
 
     render() {
-
-
         ReactDOM.render(React.createElement(ReactHighcharts, { config: config }), document.getElementById('test'));
-        ReactDOM.render(React.createElement(
-            Highlight,
-            { className: 'jsx' },
-        ), document.getElementById('code-js'));
-        ReactDOM.render(React.createElement(
-            Highlight,
-            { className: 'html' },
-        ), document.getElementById('code-html'));
-
-        return (<div>hi</div>)
+        ReactDOM.render(React.createElement(Highlight, { className: 'jsx' },), document.getElementById('code-js'));
+        ReactDOM.render(React.createElement(Highlight, { className: 'html' },), document.getElementById('code-html'));
     }
 }
 

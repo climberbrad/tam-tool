@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import Histogram from './Histogram';
+import DetailsPage from './DetailsPage';
 
-class ContactLink extends Component {
+class SearchResult extends Component {
     constructor(props) {
         super(props)
         this.state = {
             contact: props.contact,
             isClicked: false
-        };
+        }
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -20,12 +20,15 @@ class ContactLink extends Component {
 
     render() {
         return (
-            <div><a onClick={this.handleClick} href="">
-                {this.state.contact.name}</a> {this.state.contact.phone}
-                {this.state.isClicked && <Histogram/>}
+            <div>
+                <a onClick={this.handleClick} href="">{this.state.contact.name}</a> {this.state.contact.phone}
+                {
+                    this.state.isClicked &&
+                        <DetailsPage contact={this.state.contact} />
+                }
             </div>
-        );
+        )
     }
 }
 
-export default ContactLink;
+export default SearchResult;
