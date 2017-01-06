@@ -18,15 +18,20 @@ class Histogram extends Component {
         this.focus = this.focus.bind(this);
     }
 
+    // When the DOM is ready, create the chart.
+    componentDidMount() {
+        ReactDOM.render(React.createElement(ReactHighcharts, {config: config}), document.getElementById('graph-div'));
+        ReactDOM.render(React.createElement(Highlight, {className: 'jsx'},), document.getElementById('code-js'));
+        ReactDOM.render(React.createElement(Highlight, {className: 'html'},), document.getElementById('code-html'))
+    }
+
     focus() {
         // Explicitly focus the text input using the raw DOM API
         this.textInput.focus();
     }
 
     render() {
-        ReactDOM.render(React.createElement(ReactHighcharts, { config: config }), document.getElementById('test'));
-        ReactDOM.render(React.createElement(Highlight, { className: 'jsx' },), document.getElementById('code-js'));
-        ReactDOM.render(React.createElement(Highlight, { className: 'html' },), document.getElementById('code-html'));
+        return <div id="graph-div"/>
     }
 }
 

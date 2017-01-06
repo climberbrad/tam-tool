@@ -12,8 +12,13 @@ class LoginInfo extends Component {
         console.log("LoginInfo contact: ", this.state.contact)
         return (
         <div>
-            {this.state.contact && this.state.contact.name}
+            <div>{this.state.contact && this.state.contact.name}</div>
+            <div>Last Login: Today</div>
+            <div>Number of logins (past 30 days):</div>
+            <div>Number of logins (past 60 days):</div>
+            <div>Number of accounts: 6</div>
         </div>
+
         )
     }
 }
