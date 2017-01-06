@@ -32,7 +32,11 @@
 #content {
   float: left;
   background: #FFFFFF;
-  width: 850px;
+}
+
+#content_two {
+  float: left;
+  background: #FFFFFF;
 }
 
 #searchBox {
@@ -41,7 +45,12 @@
   padding: 20px;
 }
 
-#graph-div {
-  width: 550px;
-  float: right;
+#histo-div {
+
+}
+
+#barchart-div {
+  min-width: 410px;
+  height: 300px;
+  margin: 0 auto
 }

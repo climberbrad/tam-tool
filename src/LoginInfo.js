@@ -9,7 +9,6 @@ class LoginInfo extends Component {
     }
 
     render() {
-        console.log("LoginInfo contact: ", this.state.contact)
         return (
         <div>
             <div>{this.state.contact && this.state.contact.name}</div>

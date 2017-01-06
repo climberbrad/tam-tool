@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import ReactHighcharts from 'react-highcharts';
-import Highlight from 'react-highcharts';
 
 var config = {
     title: {
@@ -20,25 +18,19 @@ var config = {
 };
 
 class Histogram extends Component {
-    constructor(props) {
-        super(props)
-        this.focus = this.focus.bind(this);
-    }
 
     // When the DOM is ready, create the chart.
     componentDidMount() {
-        ReactDOM.render(React.createElement(ReactHighcharts, {config: config}), document.getElementById('graph-div'));
-        ReactDOM.render(React.createElement(Highlight, {className: 'jsx'},), document.getElementById('code-js'));
-        ReactDOM.render(React.createElement(Highlight, {className: 'html'},), document.getElementById('code-html'))
-    }
+        // let chart = this.refs.chart.getChart();
+        // chart.series[0].addPoint({x: 10, y: 12});
 
-    focus() {
-        // Explicitly focus the text input using the raw DOM API
-        this.textInput.focus();
+        // ReactDOM.render(React.createElement(ReactHighcharts, {config: config}), document.getElementById('histo-div'));
+        // ReactDOM.render(React.createElement(Highlight, {className: 'jsx'},), document.getElementById('code-js'));
+        // ReactDOM.render(React.createElement(Highlight, {className: 'html'},), document.getElementById('code-html'))
     }
 
     render() {
-        return <div id="graph-div"/>
+        return <ReactHighcharts config={config} ref="chart"></ReactHighcharts>;
     }
 }
 
