@@ -35,9 +35,7 @@ export default class HighChartComponent extends Component {
         super(props)
         this.state = {
             contact: props.contact,
-            highChartConfig: {},
-            brad: {},
-            items: []
+            highChartConfig: {}
         }
     }
 
@@ -46,6 +44,10 @@ export default class HighChartComponent extends Component {
 
         fetch(request)
             .then(response => response.json())
+            .then(function (json) {
+                config.series[0].data = json.data
+                config.chart.type = ''
+            })
             .then(items => this.setState({highChartConfig: config}))
             .catch(function (error) {
                 console.log('Request failed', error)
