@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 120px;
   padding: 20px;
   color: white;
 }
@@ -25,32 +25,25 @@
 
 #leftcolumn {
   background: #FFFFFF;
-  width: 150px;
+  text-align: left;
+  font-size: small;
+  width: 200px;
   float: left;
 }
 
-#content {
+#centercolumn {
   float: left;
   background: #FFFFFF;
+  width: 400px;
 }
 
-#content_two {
+#rightcolumn {
   float: left;
   background: #FFFFFF;
+  width: 400px;
 }
 
 #searchBox {
   text-align: center;
   color: black;
-  padding: 20px;
-}
-
-#histo-div {
-
-}
-
-#barchart-div {
-  min-width: 410px;
-  height: 300px;
-  margin: 0 auto
 }

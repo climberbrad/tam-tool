@@ -16,6 +16,7 @@ class SearchResult extends Component {
         this.setState(prevState => ({
             isClicked: !prevState.isClicked
         }));
+        this.props.click(this.state.contact);
     }
 
     render() {
@@ -24,7 +25,7 @@ class SearchResult extends Component {
                 <a onClick={this.handleClick} href="">{this.state.contact.name}</a> {this.state.contact.phone}
                 {
                     this.state.isClicked &&
-                        <DetailsPage contact={this.state.contact} />
+                    <DetailsPage contact={this.state.contact}/>
                 }
             </div>
         )
