@@ -5,7 +5,7 @@ export default class SearchResult extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            contact: props.contact,
+            org: props.org,
             isClicked: false
         }
         this.handleClick = this.handleClick.bind(this);
@@ -16,16 +16,16 @@ export default class SearchResult extends Component {
         this.setState(prevState => ({
             isClicked: !prevState.isClicked
         }));
-        this.props.click(this.state.contact);
+        this.props.click(this.state.org);
     }
 
     render() {
         return (
             <div>
-                <a onClick={this.handleClick} href="">{this.state.contact.name}</a> {this.state.contact.phone}
+                <a onClick={this.handleClick} href="">{this.state.org.name}</a> {this.state.org.id}
                 {
                     this.state.isClicked &&
-                    <DetailsPage contact={this.state.contact}/>
+                    <DetailsPage org={this.state.org}/>
                 }
             </div>
         )

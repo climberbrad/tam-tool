@@ -6,7 +6,7 @@ export default class DetailsPage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            contact: props.contact,
+            org: props.org,
             json: ''
         }
     }
@@ -14,9 +14,9 @@ export default class DetailsPage extends Component {
     render() {
         return (
             <div>
-                <div id="leftcolumn"><Sidebar contact={this.state.contact}/></div>
-                <div id="centercolumn"><HighChartComponent contact={this.state.contact} graphType="spend"/></div>
-                <div id="rightcolumn"><HighChartComponent contact={this.state.contact} graphType="logins"/></div>
+                <div id="leftcolumn"><Sidebar org={this.state.org}/></div>
+                <div id="centercolumn"><HighChartComponent org={this.state.org} graphType="spend"/></div>
+                <div id="rightcolumn"><HighChartComponent org={this.state.org} graphType="logins"/></div>
             </div>
         );
     }

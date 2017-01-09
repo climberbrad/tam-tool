@@ -15,7 +15,7 @@ class App extends Component {
                 <div className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
                     <h3>Tam Tool</h3>
-                    <div id="searchBox"><Search contacts={this.props.contacts}/></div>
+                    <div id="searchBox"><Search /></div>
                 </div>
                 <div id="graph-div"></div>
             </div>

@@ -7,23 +7,33 @@ export default class Search extends Component {
         super(props)
         this.state = {
             searchTerm: '',
-            contacts: props.contacts,
+            orgs: []
         };
         this.handleClick = this.handleClick.bind(this);
+    }
+
+    componentWillMount() {
+        var request = new Request("http://localhost:8080/v1/orgs/");
+
+        fetch(request)
+            .then(response => response.json())
+            .then(json => this.setState({orgs: json}))
+            .catch(function (error) {
+                console.log('Request failed', error)
+            });
     }
 
     updateSearch(event) {
         this.setState({searchTerm: event.target.value.substr(0, 20)});
     }
 
-    handleClick(contact) {
-        this.setState({searchTerm: contact.name});
+    handleClick(org) {
+        this.setState({searchTerm: org.name});
     }
 
-
     render() {
-        let filteredContacts = this.state.contacts.filter((contact) => {
-                return contact.name.indexOf(this.state.searchTerm) !== -1;
+        let filteredContacts = this.state.orgs.filter((org) => {
+                return org.name.indexOf(this.state.searchTerm) !== -1;
             }
         );
 
@@ -33,8 +43,8 @@ export default class Search extends Component {
                        onChange={this.updateSearch.bind(this)}/>
                 {
                     this.state.searchTerm !== '' &&
-                    filteredContacts.map((contact) => {
-                        return <SearchResult contact={contact} key={contact.id} click={this.handleClick}/>
+                    filteredContacts.map((org) => {
+                        return <SearchResult org={org} key={org.id} click={this.handleClick}/>
                     })
                 }
             </div>

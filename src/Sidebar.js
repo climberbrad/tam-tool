@@ -4,14 +4,14 @@ export default class Sidebar extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            contact: props.contact
+            org: props.org
         }
     }
 
     render() {
         return (
         <div>
-            <h1>{this.state.contact.name}</h1>
+            <h1>{this.state.org.name}</h1>
 
             <h3><a href="">Activity</a></h3>
             <div>Last Login: Today</div>

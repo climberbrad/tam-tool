@@ -6,14 +6,14 @@ export default class HighChartComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            contact: props.contact,
+            org: props.org,
             graphType: props.graphType,
             highChartConfig: {}
         }
     }
 
     componentWillMount() {
-        var request = new Request("http://localhost:8080/v1/org/" + this.state.contact.id + "/" + this.state.graphType);
+        var request = new Request("http://localhost:8080/v1/org/" + this.state.org.id + "/" + this.state.graphType);
 
         fetch(request)
             .then(response => response.json())
