@@ -45,8 +45,10 @@ export default class HighChartComponent extends Component {
         fetch(request)
             .then(response => response.json())
             .then(function (json) {
-                config.series[0].data = json.data
-                config.chart.type = ''
+                config.title.text = json.title
+                config.series[0].name = json.seriesData[0].name
+                config.series[0].data = json.seriesData[0].data
+                config.chart.type = json.graphType.toLowerCase()
             })
             .then(items => this.setState({highChartConfig: config}))
             .catch(function (error) {
