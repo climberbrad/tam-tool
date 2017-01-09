@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import SearchResult from './SearchResult';
 
-class Search extends Component {
+export default class Search extends Component {
 
     constructor(props) {
         super(props)
@@ -41,5 +41,3 @@ class Search extends Component {
         )
     }
 }
-
-export default Search;

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import DetailsPage from './DetailsPage';
 
-class SearchResult extends Component {
+export default class SearchResult extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -31,5 +31,3 @@ class SearchResult extends Component {
         )
     }
 }
-
-export default SearchResult;
