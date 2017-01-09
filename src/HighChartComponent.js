@@ -35,20 +35,23 @@ export default class HighChartComponent extends Component {
         super(props)
         this.state = {
             contact: props.contact,
+            graphType: props.graphType,
             highChartConfig: {}
         }
     }
 
     componentWillMount() {
-        var request = new Request("http://localhost:8080/v1/org/" + this.state.contact.id);
+        var request = new Request("http://localhost:8080/v1/org/" + this.state.contact.id + "/" + this.state.graphType);
 
         fetch(request)
             .then(response => response.json())
             .then(function (json) {
-                config.title.text = json.title
-                config.series[0].name = json.seriesData[0].name
-                config.series[0].data = json.seriesData[0].data
-                config.chart.type = json.graphType.toLowerCase()
+                for (var i = 0; i < json.seriesData.length; i++) {
+                    config.title.text = json.title
+                    config.series[i].name = json.seriesData[i].name
+                    config.series[i].data = json.seriesData[i].data
+                    config.chart.type = json.graphType.toLowerCase()
+                }
             })
             .then(items => this.setState({highChartConfig: config}))
             .catch(function (error) {

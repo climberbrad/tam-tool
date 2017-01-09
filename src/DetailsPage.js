@@ -59,27 +59,12 @@ export default class DetailsPage extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     var request = new Request('http://localhost:8080/v1/org');
-    //
-    //     fetch(request).then(function (response) {
-    //         // Convert to JSON
-    //         return response.json();
-    //     }).then(function (j) {
-    //         console.log(JSON.stringify(j.data));
-    //     }).catch(function (error) {
-    //         console.log('Request failed', error)
-    //     });
-    // }
-
-
-
     render() {
         return (
             <div>
                 <div id="leftcolumn"><Sidebar contact={this.state.contact}/></div>
-                <div id="centercolumn"><HighChartComponent contact={this.state.contact}/></div>
-                <div id="rightcolumn"><HighChartComponent contact={this.state.contact}/></div>
+                <div id="centercolumn"><HighChartComponent contact={this.state.contact} graphType="spend"/></div>
+                <div id="rightcolumn"><HighChartComponent contact={this.state.contact} graphType="logins"/></div>
             </div>
         );
     }
