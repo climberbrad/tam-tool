@@ -18,6 +18,12 @@
   font-size: large;
 }
 
+.side-bar {
+  border: thin #ccc;
+  padding: 10px;
+  padding-bottom: 25px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -48,9 +54,16 @@
   font-size: 24px;
 }
 
+.side-bar-header {
+  font-family: 'Vollkorn', serif;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
 #org_stat {
-  font-family: "Courier New";
-  size: 12px;
+  font-family: 'Vollkorn', serif;
+  font-size: 16px;
 }
 
 #leftcolumn {
@@ -64,13 +77,13 @@
 #centercolumn {
   float: left;
   background: #FFFFFF;
-  width: 400px;
+  width: 450px;
 }
 
 #rightcolumn {
   float: left;
   background: #FFFFFF;
-  width: 400px;
+  width: 450px;
 }
 
 #searchBox {
@@ -88,14 +101,3 @@
   text-align: left;
 }
 
-.table {
-  display: table;
-  margin: 0px auto;
-}
-.tr {
-  display: table-row;
-  margin: 10px;
-}
-.td {
-  display: table-cell;
-}
