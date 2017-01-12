@@ -41,7 +41,7 @@ export default class Sidebar extends Component {
 
                 <div className="side-bar-header"><a href="">Reservations</a></div>
                 <div id="org_stat">Total Reservations: {this.state.orgDetails.numReservations}</div>
-                <div id="org_stat">Savings from plan: $67,874</div>
+                <div id="org_stat">Savings from plan: ${this.state.orgDetails.savingsFromPlan}</div>
                 <div id="org_stat">Savings from mods: $874</div>
                 <div id="org_stat">Last RI purchase: 2017-01-03</div>
                 <div id="org_stat">Next RI to expire: 2017-03-15</div>

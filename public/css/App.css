@@ -63,14 +63,14 @@
 
 #org_stat {
   font-family: 'Vollkorn', serif;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 #leftcolumn {
   background: #FFFFFF;
   text-align: left;
   font-size: small;
-  width: 200px;
+  width: 250px;
   float: left;
 }
 
