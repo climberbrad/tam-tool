@@ -23,6 +23,36 @@
   to { transform: rotate(360deg); }
 }
 
+#search-bar-suggestions li {
+  cursor: default;
+  letter-spacing: 0.03em;
+  padding: 12px 7px 12px 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#search-bar-suggestions {
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-sizing: border-box;
+  font-size: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: -1px;
+}
+
+#organization_name {
+  color: #4286f4;
+  font-size: 24px;
+}
+
+#org_stat {
+  font-family: "Courier New";
+  size: 12px;
+}
+
 #leftcolumn {
   background: #FFFFFF;
   text-align: left;
@@ -44,6 +74,28 @@
 }
 
 #searchBox {
-  text-align: center;
   color: black;
+}
+
+#searchInput {
+  margin-bottom: 20px;
+}
+
+.searchResultCol1 {
+  padding: 0 15px 15px 0;
+}
+.searchResultCol1, .searchResultCol2 {
+  text-align: left;
+}
+
+.table {
+  display: table;
+  margin: 0px auto;
+}
+.tr {
+  display: table-row;
+  margin: 10px;
+}
+.td {
+  display: table-cell;
 }

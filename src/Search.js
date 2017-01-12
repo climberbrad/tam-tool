@@ -12,6 +12,10 @@ export default class Search extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    componentDidMount() {
+        this.refs.search.focus();
+    }
+
     componentWillMount() {
         var request = new Request("http://localhost:8080/v1/orgs/");
 
@@ -38,8 +42,8 @@ export default class Search extends Component {
         );
 
         return (
-            <div>
-                <input ref="myTextInput" type="text" placeholder="Search Orgs" value={this.state.searchTerm}
+            <div id="searchContent">
+                <input id="searchInput" ref="search" type="text" placeholder="Search Orgs" value={this.state.searchTerm}
                        onChange={this.updateSearch.bind(this)}/>
                 {
                     this.state.searchTerm !== '' &&

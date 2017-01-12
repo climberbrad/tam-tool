@@ -22,7 +22,8 @@ export default class SearchResult extends Component {
     render() {
         return (
             <div>
-                <a onClick={this.handleClick} href="">{this.state.org.name}</a> {this.state.org.id}
+
+                <div><a onClick={this.handleClick} href="">{this.state.org.name}</a> {this.state.org.id}</div>
                 {
                     this.state.isClicked &&
                     <DetailsPage org={this.state.org}/>
