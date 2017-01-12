@@ -50,7 +50,7 @@
 }
 
 #organization_name {
-  color: #4286f4;
+  color: dodgerblue;
   font-size: 24px;
 }
 
@@ -99,5 +99,13 @@
 }
 .searchResultCol1, .searchResultCol2 {
   text-align: left;
+}
+
+.org-data {
+  float: right;
+  font-family: Courier;
+  font-size: 14px;
+  color: dodgerblue;
+  padding-right: 40px;
 }
 
