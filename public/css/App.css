@@ -74,10 +74,24 @@
   float: left;
 }
 
+#content {
+  float: left;
+  width: 900px;
+}
+
 #centercolumn {
   float: left;
   background: #FFFFFF;
   width: 450px;
+}
+
+#bottomcolumn {
+  position: absolute;
+  bottom: 0;
+  text-align: start;
+  width: 900px;
+  height: 100px;
+
 }
 
 #rightcolumn {
