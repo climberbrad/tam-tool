@@ -62,15 +62,16 @@
 }
 
 #org_stat {
-  font-family: 'Vollkorn', serif;
+  font-family: "Apple SD Gothic Neo";
   font-size: 14px;
+  padding: 1px;
 }
 
 #leftcolumn {
   background: #FFFFFF;
   text-align: left;
   font-size: small;
-  width: 250px;
+  width: 275px;
   float: left;
 }
 
