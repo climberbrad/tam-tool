@@ -23,7 +23,7 @@ export default class SearchResult extends Component {
         return (
             <div>
 
-                <div><a onClick={this.handleClick} href="">{this.state.org.name}</a> {this.state.org.id}</div>
+                <div id="search-result"><a onClick={this.handleClick} href="">{this.state.org.name}</a> {this.state.org.id}</div>
                 {
                     this.state.isClicked &&
                     <DetailsPage org={this.state.org}/>

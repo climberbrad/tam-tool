@@ -72,7 +72,7 @@
   background: #FFFFFF;
   text-align: left;
   font-size: small;
-  width: 275px;
+  width: 300px;
   float: left;
 }
 
@@ -110,11 +110,8 @@
   margin-bottom: 20px;
 }
 
-.searchResultCol1 {
-  padding: 0 15px 15px 0;
-}
-.searchResultCol1, .searchResultCol2 {
-  text-align: left;
+#search-result {
+  font-family: "Apple SD Gothic Neo";
 }
 
 .org-data {

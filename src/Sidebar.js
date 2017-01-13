@@ -33,7 +33,6 @@ export default class Sidebar extends Component {
                 <div id="org_stat">Logins (past 60 days): <div className="org-data">{this.state.orgDetails.numLoginsLastTwoMonth}</div></div>
                 <div id="org_stat">Total accounts: <div className="org-data">{this.state.orgDetails.numAccounts}</div></div>
 
-
                 <div className="side-bar-header">Reservations</div>
                 <div id="org_stat">Total Reservations: <div className="org-data">{this.state.orgDetails.numReservations}</div></div>
                 <div id="org_stat">RI's expiring (30 days): <div className="org-data">{this.state.orgDetails.numRisExpiringNextMonth}</div></div>
@@ -41,8 +40,12 @@ export default class Sidebar extends Component {
                 <div id="org_stat">Last RI purchase: <div className="org-data">{this.state.orgDetails.dateOfLastRiPurchase}</div></div>
                 <div id="org_stat">RI Planner executed: <div className="org-data">{this.state.orgDetails.planLastExecuted}</div></div>
                 <div id="org_stat">Savings from mods: <div className="org-data">$TBD</div></div>
-                <div id="org_stat">Tagged inventory percent: <div className="org-data">TBD%</div></div>
-                <div id="org_stat">cldy score: <div className="org-data">TBD</div></div>
+                <div id="org_stat">Tagged inventory percent: <div className="org-data">%TBD</div></div>
+
+                <div className="side-bar-header">Site Usage:</div>
+                <div id="org_stat">Number of custom reports: <div className="org-data">{this.state.orgDetails.numCustomWidgetsCreated}</div></div>
+                <div id="org_stat">Total page loads (30 days): <div className="org-data">{this.state.orgDetails.numTotalPageLoads}</div></div>
+                <div id="org_stat">RI Planner page loads (30 days): <div className="org-data">{this.state.orgDetails.numPlannerPageLoads}</div></div>
                 <br/>
             </div>
         )
