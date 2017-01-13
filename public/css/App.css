@@ -55,16 +55,17 @@
 }
 
 .side-bar-header {
-  font-family: 'Vollkorn', serif;
+  font-family: "Apple SD Gothic Neo";
   font-size: 18px;
-  padding-top: 10px;
+  padding-top: 25px;
   padding-bottom: 5px;
 }
 
 #org_stat {
   font-family: "Apple SD Gothic Neo";
   font-size: 14px;
-  padding: 1px;
+  padding: 3px;
+  border-bottom: 1px solid #aaa;
 }
 
 #leftcolumn {
