@@ -29,20 +29,14 @@ export default class Sidebar extends Component {
 
                 <div className="side-bar-header">Activity</div>
                 <div id="org_stat">Last Login: <div className="org-data">{this.state.orgDetails.lastLogin}</div></div>
-                <div id="org_stat">Logins (past 30 days): <div className="org-data">TBD</div></div>
-                <div id="org_stat">Logins (past 60 days): <div className="org-data">TBD</div></div>
+                <div id="org_stat">Logins (past 30 days): <div className="org-data">{this.state.orgDetails.numLoginsLastMonth}</div></div>
+                <div id="org_stat">Logins (past 60 days): <div className="org-data">{this.state.orgDetails.numLoginsLastTwoMonth}</div></div>
                 <div id="org_stat">Total accounts: <div className="org-data">{this.state.orgDetails.numAccounts}</div></div>
 
-                <div className="side-bar-header">Monthly Spend</div>
-                <div id="org_stat">EC2: <div className="org-data">TBD</div></div>
-                <div id="org_stat">RDS: <div className="org-data">TBD</div></div>
-                <div id="org_stat">Redshift: <div className="org-data">TBD</div></div>
-                <div id="org_stat">Elasticache: <div className="org-data">TBD</div></div>
-                <div id="org_stat">MRR: <div className="org-data">TBD</div></div>
 
                 <div className="side-bar-header">Reservations</div>
                 <div id="org_stat">Total Reservations: <div className="org-data">{this.state.orgDetails.numReservations}</div></div>
-                <div id="org_stat">RI's to expire next month: <div className="org-data">{this.state.orgDetails.numRisExpiringNextMonth}</div></div>
+                <div id="org_stat">RI's expiring (30 days): <div className="org-data">{this.state.orgDetails.numRisExpiringNextMonth}</div></div>
                 <div id="org_stat">RI Planner Savings: <div className="org-data">${this.state.orgDetails.savingsFromPlan}</div></div>
                 <div id="org_stat">Last RI purchase: <div className="org-data">{this.state.orgDetails.dateOfLastRiPurchase}</div></div>
                 <div id="org_stat">RI Planner executed: <div className="org-data">{this.state.orgDetails.planLastExecuted}</div></div>
