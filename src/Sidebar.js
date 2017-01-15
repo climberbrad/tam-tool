@@ -28,6 +28,7 @@ export default class Sidebar extends Component {
                 <div id="org_stat">Member since: <div className="org-data">{this.state.orgDetails.subscriptionStartsAt}</div></div>
 
                 <div className="side-bar-header">Activity</div>
+                <div id="org_stat">Last data sync: <div className="org-data">{this.state.orgDetails.lastDataSyncDate}</div></div>
                 <div id="org_stat">Last Login: <div className="org-data">{this.state.orgDetails.lastLogin}</div></div>
                 <div id="org_stat">Logins (past 30 days): <div className="org-data">{this.state.orgDetails.numLoginsLastMonth}</div></div>
                 <div id="org_stat">Logins (past 60 days): <div className="org-data">{this.state.orgDetails.numLoginsLastTwoMonth}</div></div>
@@ -42,11 +43,10 @@ export default class Sidebar extends Component {
                 <div id="org_stat">Savings from mods: <div className="org-data">$TBD</div></div>
                 <div id="org_stat">Tagged inventory percent: <div className="org-data">%TBD</div></div>
 
-                <div className="side-bar-header">Site Usage:</div>
+                <div className="side-bar-header">Site Usage</div>
                 <div id="org_stat">Number of custom reports: <div className="org-data">{this.state.orgDetails.numCustomWidgetsCreated}</div></div>
                 <div id="org_stat">Total page loads (30 days): <div className="org-data">{this.state.orgDetails.numTotalPageLoads}</div></div>
                 <div id="org_stat">RI Planner page loads (30 days): <div className="org-data">{this.state.orgDetails.numPlannerPageLoads}</div></div>
-                <br/>
             </div>
         )
     }
