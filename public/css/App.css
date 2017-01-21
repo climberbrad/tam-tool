@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
+.logo-spinner {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
@@ -14,111 +14,32 @@
   color: white;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-.side-bar {
-  border: thin #ccc;
-  padding: 10px;
-  padding-bottom: 25px;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-#search-bar-suggestions li {
-  cursor: default;
-  letter-spacing: 0.03em;
-  padding: 12px 7px 12px 10px;
-  -webkit-tap-highlight-color: transparent;
-}
-
-#search-bar-suggestions {
-  border: 1px solid #ccc;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  box-sizing: border-box;
-  font-size: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  top: -1px;
-}
-
-#organization_name {
-  color: dodgerblue;
+.page-title {
+  font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 24px;
+  padding-bottom: 10px;
+  padding-top: 2px;
 }
 
-.side-bar-header {
-  font-family: "Apple SD Gothic Neo";
-  font-size: 18px;
-  padding-top: 25px;
-  padding-bottom: 5px;
-}
-
-#org_stat {
-  font-family: "Apple SD Gothic Neo";
-  font-size: 14px;
-  padding: 3px;
-  border-bottom: 1px solid #aaa;
-}
-
-#leftcolumn {
-  background: #FFFFFF;
-  text-align: left;
-  font-size: small;
-  width: 300px;
-  float: left;
-}
-
-#content {
-  float: left;
-  width: 900px;
-}
-
-#centercolumn {
-  float: left;
-  background: #FFFFFF;
-  width: 450px;
-}
-
-#bottomcolumn {
-  position: absolute;
-  bottom: 0;
-  text-align: start;
-  width: 900px;
-  height: 100px;
-
-}
-
-#rightcolumn {
-  float: left;
-  background: #FFFFFF;
-  width: 450px;
-}
-
-#searchBox {
+.search-box {
   color: black;
-}
-
-#searchInput {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 #search-result {
   font-family: "Apple SD Gothic Neo";
 }
 
-#tool-name {
-  font-family: "Comic Sans MS", cursive, sans-serif;
+.organization-name {
+  color: dodgerblue;
   font-size: 24px;
-  padding-bottom: 10px;
-  padding-top: 2px;
+}
+
+.stat {
+  font-family: "Apple SD Gothic Neo";
+  font-size: 14px;
+  padding: 3px;
+  border-bottom: 1px solid #aaa;
 }
 
 .org-data {
@@ -129,47 +50,36 @@
   padding-right: 40px;
 }
 
-
-
-.whiteContentStyles {
-  position: fixed;
-  top: 25%;
-  left: 30%;
-  right: 30%;
-  backgroundColor: #fff;
-  color: #7F7F7F;
-  padding: 20px;
-  border: 2px solid #ccc;
-  borderRadius: 20px;
-  boxShadow: 0 1px 5px #333;
-  zIndex: 101;
+.left-column {
+  background: #FFFFFF;
+  text-align: left;
+  font-size: small;
+  width: 300px;
+  float: left;
 }
 
-.blackOverlayStyles {
-  background: black;
-  opacity: .5;
-  position: fixed;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  zIndex: 100;
+.side-bar-header {
+  font-family: "Apple SD Gothic Neo";
+  font-size: 18px;
+  padding-top: 25px;
+  padding-bottom: 5px;
 }
 
-.closeTagStyles {
-  float: right;
-  marginTop: -30px;
-  marginRight: -30px;
-  cursor: pointer;
-  color: #fff;
-  border: 1px solid #AEAEAE;
-  borderRadius: 30px;
-  background: #605F61;
-  fontSize: 31px;
-  fontWeight: bold;
-  display: inline-block;
-  lineHeight: 0px;
-  padding: 11px 3px;
-  textDecoration: none
+.small-chart {
+  width: 500px;
 }
 
+.long-chart {
+  height: 25%;
+  width:65%;
+  bottom: 0;
+  position:absolute;
+}
+
+.column{
+  float: left;
+  overflow: hidden;
+}
+
+.row{
+}

@@ -42,8 +42,8 @@ export default class Search extends Component {
         );
 
         return (
-            <div id="searchContent">
-                <input id="searchInput" ref="search" type="text" placeholder="Search Orgs" value={this.state.searchTerm}
+            <div>
+                <input className="search-box" ref="search" type="text" placeholder="Search Orgs" value={this.state.searchTerm}
                        onChange={this.updateSearch.bind(this)}/>
                 {
                     this.state.searchTerm !== '' &&

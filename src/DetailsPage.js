@@ -13,14 +13,16 @@ export default class DetailsPage extends Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    <div id="leftcolumn"><Sidebar org={this.state.org}/></div>
-                    <div id="content">
-                        <div id="centercolumn"><HighChartComponent org={this.state.org} graphType="spend"/></div>
-                        <div id="rightcolumn"><HighChartComponent org={this.state.org} graphType="logins"/></div>
-                        <div id="bottomcolumn"><HighChartComponent org={this.state.org} graphType="spendPerService"/></div>
+            <div className="column">
+                <div className="column">
+                    <div className="left-column"><Sidebar org={this.state.org}/></div>
+                </div>
+                <div className="column">
+                    <div className="row">
+                        <div className="column"><div className="small-chart"><HighChartComponent org={this.state.org} graphType="spend"/></div></div>
+                        <div className="column"><div className="small-chart"><HighChartComponent org={this.state.org} graphType="logins"/></div></div>
                     </div>
+                    <div className="row"><div className="long-chart"><HighChartComponent org={this.state.org} graphType="spendPerService"/></div></div>
                 </div>
             </div>
         );

@@ -13,11 +13,10 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <div id="tool-name">Tam Tool</div>
-                    <div id="searchBox"><Search /></div>
+                    <img src={logo} className="logo-spinner" alt="logo"/>
+                    <div className="page-title">Tam Tool</div>
+                    <div className="search-box"><Search/></div>
                 </div>
-                <div id="graph-div"></div>
             </div>
         );
     }
