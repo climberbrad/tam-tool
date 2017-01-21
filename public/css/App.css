@@ -7,6 +7,11 @@
   height: 80px;
 }
 
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .App-header {
   background-color: #28A9E1;
   height: 110px;
