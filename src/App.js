@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import logo from '../public/img/Fasticon-Hand-Draw-Iphone-Settings.ico';
+import logo from '../public/img/logo1.png';
 import '../public/css/App.css';
 import Search from './Search';
 
@@ -13,8 +13,7 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="App-header">
-                    <img src={logo} className="logo-spinner" alt="logo"/>
-                    <div className="page-title">Tam Tool</div>
+                    <img src={logo} className="logo" alt="logo"/>
                     <div className="search-box"><Search/></div>
                 </div>
             </div>
