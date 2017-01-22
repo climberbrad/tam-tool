@@ -30,6 +30,7 @@
 }
 
 .stat {
+  cursor: pointer;
   font-family: "Apple SD Gothic Neo";
   font-size: 14px;
   padding: 3px;
@@ -42,6 +43,10 @@
   font-size: 14px;
   color: dodgerblue;
   padding-right: 40px;
+}
+
+.stat:hover {
+  background: #f8f8f8;
 }
 
 .left-column {

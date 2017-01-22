@@ -34,7 +34,10 @@ export default class Sidebar extends Component {
                 <div className="stat">Member since: <div className="org-data">{this.state.orgDetails.subscriptionStartsAt}</div></div>
 
                 <div className="side-bar-header">AWS Usage</div>
-                <div className="stat">Total accounts: <div className="org-data" onClick={this.handleClick}>{this.state.orgDetails.numAccounts}</div></div>
+                <div className="stat" onClick={this.handleClick}>
+                    Total accounts:
+                    <div className="org-data">{this.state.orgDetails.numAccounts}</div>
+                </div>
                 <div className="stat">Total users: <div className="org-data">TBD</div></div>
                 <div className="stat">Payer Accounts: <div className="org-data">TBD</div></div>
                 <div className="stat">Spend this month: <div className="org-data">TBD and delta</div></div>
