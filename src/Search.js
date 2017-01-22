@@ -31,7 +31,10 @@ export default class Search extends Component {
     }
 
     updateSearch(event) {
-        this.setState({searchTerm: event.target.value.substr(0, 20)});
+        this.setState({
+            found: false,
+            searchTerm: event.target.value.substr(0, 20)
+        });
     }
 
     handleClick(org) {
