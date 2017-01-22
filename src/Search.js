@@ -62,7 +62,7 @@ export default class Search extends Component {
                         if (this.state.found === false) {
                             return <SearchResult org={org} key={org.id} click={this.handleClick}/>
                         } else {
-                            return <DetailsPage org={this.state.org}/>
+                            return <DetailsPage key={org.id} org={this.state.org}/>
                         }
                     })
                 }
