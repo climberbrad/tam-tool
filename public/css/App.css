@@ -8,7 +8,7 @@
 
 .App-header {
   background-color: #28A9E1;
-  padding: 15px;
+  padding: 10px;
   height: 60px;
   color: white;
 }
@@ -26,6 +26,7 @@
 .organization-name {
   color: dodgerblue;
   font-size: 24px;
+  border-bottom: 1px solid #aaa;
 }
 
 .stat {
