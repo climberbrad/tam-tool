@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import SearchResult from './SearchResult';
+import DetailsPage from './DetailsPage';
 
 export default class Search extends Component {
 
@@ -7,7 +8,9 @@ export default class Search extends Component {
         super(props)
         this.state = {
             searchTerm: '',
-            orgs: []
+            orgs: [],
+            found: false,
+            org: {}
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -32,7 +35,11 @@ export default class Search extends Component {
     }
 
     handleClick(org) {
-        this.setState({searchTerm: org.name});
+        this.setState({
+            searchTerm: org.name,
+            found: true,
+            org: org
+        });
     }
 
     render() {
@@ -43,12 +50,17 @@ export default class Search extends Component {
 
         return (
             <div>
-                <input className="search-box" ref="search" type="text" placeholder="Search Orgs" value={this.state.searchTerm}
+                <input className="search-box" ref="search" type="text" placeholder="Search Orgs"
+                       value={this.state.searchTerm}
                        onChange={this.updateSearch.bind(this)}/>
                 {
                     this.state.searchTerm !== '' &&
                     filteredContacts.map((org) => {
-                        return <SearchResult org={org} key={org.id} click={this.handleClick}/>
+                        if (this.state.found === false) {
+                            return <SearchResult org={org} key={org.id} click={this.handleClick}/>
+                        } else {
+                            return <DetailsPage org={this.state.org}/>
+                        }
                     })
                 }
             </div>
