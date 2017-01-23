@@ -46,7 +46,7 @@
 }
 
 .stat:hover {
-  background: #f8f8f8;
+  background: #ededed;
 }
 
 .left-column {
@@ -66,6 +66,12 @@
 
 .small-chart {
   width: 500px;
+  min-width: 500px;
+}
+
+.wide-chart {
+  height: 30%;
+  width:100%;
 }
 
 .long-chart {

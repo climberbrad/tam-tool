@@ -51,7 +51,15 @@ export default class DetailsPage extends Component {
         return (
             <div className="column">
                 <div className="row">
-                    <div className="small-chart"><HighChartComponent org={this.state.org} graphType="spendPerService"/>
+                    <div className="column">
+                        <div className="small-chart"></div>
+                    </div>
+                    <div className="column">
+                        <div className="small-chart"></div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="wide-chart"><HighChartComponent org={this.state.org} graphType="spendPerService"/>
                     </div>
                 </div>
             </div>
