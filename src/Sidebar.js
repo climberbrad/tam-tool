@@ -7,7 +7,6 @@ export default class Sidebar extends Component {
             org: props.org,
             orgDetails: {}
         }
-        this.handleClick = this.handleClick.bind(this);
     }
 
     componentWillMount() {
@@ -21,12 +20,6 @@ export default class Sidebar extends Component {
             });
     }
 
-    handleClick(e) {
-        console.log('sidebar click!')
-        this.props.click(e);
-    }
-
-
     render() {
         return (
             <div className="side-bar">
@@ -34,7 +27,7 @@ export default class Sidebar extends Component {
                 <div className="stat">Member since <div className="org-data">{this.state.orgDetails.subscriptionStartsAt}</div></div>
 
                 <div className="side-bar-header">AWS Usage</div>
-                <div className="stat" onClick={this.handleClick}>AWS servics <div className="org-data">TBD</div></div>
+                <div className="stat" onClick={() => this.props.click(["spendPerService"])}>AWS servics <div className="org-data">TBD</div></div>
                 <div className="stat" onClick={this.handleClick}>Total accounts<div className="org-data">{this.state.orgDetails.numAccounts}</div></div>
                 <div className="stat">Total users <div className="org-data">TBD</div></div>
                 <div className="stat">Payer Accounts <div className="org-data">TBD</div></div>

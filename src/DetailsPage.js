@@ -7,66 +7,71 @@ export default class DetailsPage extends Component {
         super(props)
         this.state = {
             org: props.org,
-            json: '',
-            clicked: false
+            charts: props.charts
         }
         this.handleClick = this.handleClick.bind(this);
+        this.render1Chart = this.render1Chart.bind(this);
     }
 
-    handleClick(event) {
-        console.log('details click!')
+    handleClick(chartList) {
         this.setState({
-            clicked: true
-        })
+            charts: chartList
+        });
     }
 
-    renderGraphs() {
-        if (this.state.clicked === false) {
-            return this.renderMultiGraphs()
-        } else {
-            return this.renderOneChart()
+    render1Chart() {
+        return (
+            <div>
+                <div className="row">
+                    <div className="column column-12"><HighChartComponent org={this.state.org} graphType={this.state.charts[0]}/></div>
+                </div>
+            </div>
+        );
+    }
+
+    render2Charts() {
+        return (
+            <div>
+                <div className="row">
+                    <div className="column column-6"><HighChartComponent org={this.state.org} graphType={this.state.charts[0]}/>
+                    </div>
+                    <div className="column column-6"><HighChartComponent org={this.state.org} graphType={this.state.charts[1]}/>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    render3Charts() {
+        return (
+            <div>
+                <div className="row">
+                    <div className="column column-6"><HighChartComponent org={this.state.org} graphType={this.state.charts[0]}/>
+                    </div>
+                    <div className="column column-6"><HighChartComponent org={this.state.org} graphType={this.state.charts[1]}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="column column-12"><HighChartComponent org={this.state.org} graphType={this.state.charts[2]}/>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    renderCharts() {
+
+        if(this.state.charts.length === 1) {
+            return this.render1Chart()
         }
-    }
 
-    renderMultiGraphs() {
-        return (
-            <div className="column">
-                <div className="row">
-                    <div className="column">
-                        <div className="small-chart"><HighChartComponent org={this.state.org} graphType="spend"/></div>
-                    </div>
-                    <div className="column">
-                        <div className="small-chart"><HighChartComponent org={this.state.org} graphType="logins"/></div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="long-chart"><HighChartComponent org={this.state.org} graphType="spendPerService"/>
-                    </div>
-                </div>
-            </div>
-        );
-    }
+        if(this.state.charts.length === 2) {
+            return this.render2Charts()
+        }
 
-    renderOneChart() {
-        return (
-            <div className="column">
-                <div className="row">
-                    <div className="column">
-                        <div className="card">18</div>
-                    </div>
-                    <div className="column">
-                        <div className="card">19</div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="column">
-                        <div className="wide-chart"><HighChartComponent org={this.state.org}
-                                                                        graphType="spendPerService"/></div>
-                    </div>
-                </div>
-            </div>
-
-        );
+        if(this.state.charts.length === 3) {
+            return this.render3Charts()
+        }
     }
 
     render() {
@@ -75,16 +80,7 @@ export default class DetailsPage extends Component {
                 <div className="column column-2">
                     <div className="left-column"><Sidebar org={this.state.org} click={this.handleClick}/></div>
                 </div>
-                <div className="column column-10">
-                    <div className="row">
-                        <div className="column column-6"><HighChartComponent org={this.state.org} graphType="spend"/></div>
-                        <div className="column column-6"><HighChartComponent org={this.state.org} graphType="logins"/></div>
-                    </div>
-                    <div className="row">
-                        <div className="column column-12"><HighChartComponent org={this.state.org} graphType="spendPerService"/></div>
-                    </div>
-                </div>
-
+                <div className="column column-10">{this.renderCharts()}</div>
             </div>
         );
     }
