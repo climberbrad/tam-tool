@@ -42,8 +42,8 @@ export default class Sidebar extends Component {
                 <div className="stat">Tagged inventory percent <div className="org-data">%TBD</div></div>
 
                 <div className="side-bar-header">Cloudability Usage</div>
-                <div className="stat">Last data sync <div className="org-data">{this.state.orgDetails.lastDataSyncDate}</div></div>
                 <div className="stat">Last Login <div className="org-data">{this.state.orgDetails.lastLogin}</div></div>
+                <div className="stat">Last data sync <div className="org-data">{this.state.orgDetails.lastDataSyncDate}</div></div>
                 <div className="stat">Logins (past 30 days) <div className="org-data">{this.state.orgDetails.numLoginsLastMonth}</div></div>
                 <div className="stat">Logins (past 60 days) <div className="org-data">{this.state.orgDetails.numLoginsLastTwoMonth}</div></div>
                 <div className="stat">Number of custom reports <div className="org-data">{this.state.orgDetails.numCustomWidgetsCreated}</div></div>

@@ -52,14 +52,16 @@ export default class DetailsPage extends Component {
             <div className="column">
                 <div className="row">
                     <div className="column">
-                        <div className="small-chart"></div>
+                        <div className="card">18</div>
                     </div>
                     <div className="column">
-                        <div className="small-chart"></div>
+                        <div className="card">19</div>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="wide-chart"><HighChartComponent org={this.state.org} graphType="spendPerService"/>
+                    <div className="column">
+                        <div className="wide-chart"><HighChartComponent org={this.state.org}
+                                                                        graphType="spendPerService"/></div>
                     </div>
                 </div>
             </div>
@@ -69,11 +71,20 @@ export default class DetailsPage extends Component {
 
     render() {
         return (
-            <div className="column">
-                <div className="column">
+            <div className="row">
+                <div className="column column-2">
                     <div className="left-column"><Sidebar org={this.state.org} click={this.handleClick}/></div>
                 </div>
-                {this.renderGraphs()}
+                <div className="column column-10">
+                    <div className="row">
+                        <div className="column column-6"><HighChartComponent org={this.state.org} graphType="spend"/></div>
+                        <div className="column column-6"><HighChartComponent org={this.state.org} graphType="logins"/></div>
+                    </div>
+                    <div className="row">
+                        <div className="column column-12"><HighChartComponent org={this.state.org} graphType="spendPerService"/></div>
+                    </div>
+                </div>
+
             </div>
         );
     }
