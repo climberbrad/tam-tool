@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import SearchResult from './SearchResult';
-import DetailsPage from './DetailsPage';
 
 export default class Search extends Component {
 
@@ -9,8 +8,7 @@ export default class Search extends Component {
         this.state = {
             searchTerm: '',
             orgs: [],
-            found: false,
-            org: {}
+            found: false
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -38,10 +36,10 @@ export default class Search extends Component {
     }
 
     handleClick(org) {
+        this.props.click(org);
         this.setState({
             searchTerm: org.name,
-            found: true,
-            org: org
+            found: true
         });
     }
 
@@ -52,18 +50,14 @@ export default class Search extends Component {
         );
 
         return (
-            <div>
+            <div className="center"><div className="bottom-aligner" />
                 <input className="search-box" ref="search" type="text" placeholder="Search Orgs"
                        value={this.state.searchTerm}
                        onChange={this.updateSearch.bind(this)}/>
                 {
-                    this.state.searchTerm !== '' &&
+                    this.state.searchTerm !== '' && this.state.found == false &&
                     filteredContacts.map((org) => {
-                        if (this.state.found === false) {
-                            return <SearchResult org={org} key={org.id} click={this.handleClick}/>
-                        } else {
-                            return <DetailsPage key={org.id} org={this.state.org} charts={["spend", "logins", "spendPerService"]}/>
-                        }
+                        return <SearchResult org={org} key={org.id} click={this.handleClick}/>
                     })
                 }
             </div>

@@ -1,26 +1,44 @@
-.App {
-  text-align: center;
-}
-
 .logo {
   height: 70px;
 }
 
-.App-header {
+.header {
+  position: relative;
   background-color: #28A9E1;
-  padding: 10px;
-  height: 60px;
-  color: white;
+  height: 70px;
+}
+
+.chart {
+  height: 90%;
+  width: 90%;
+}
+
+.center {
+  display: table;
+  margin: 0 auto;
 }
 
 .search-box {
-  color: black;
+  margin: 0 auto;
   margin-bottom: 5px;
   margin-top: 3px;
+  display: table;
+}
+
+.bottom-aligner {
+  display: inline-block;
+  height: 40px;
+  vertical-align: bottom;
+  width: 0px;
 }
 
 #search-result {
+  display: table;
+  margin: 0 auto;
   font-family: "Apple SD Gothic Neo";
+  color: black;
+  text-align: left;
+  padding: 1px;
 }
 
 .organization-name {
@@ -49,12 +67,11 @@
   background: #ededed;
 }
 
-.left-column {
-  background: #FFFFFF;
+.sidebar {
   text-align: left;
-  font-size: small;
   min-width: 235px;
   float: left;
+  padding-left: 10px;
 }
 
 .side-bar-header {
@@ -62,23 +79,6 @@
   font-size: 18px;
   padding-top: 35px;
   padding-bottom: 5px;
-}
-
-.small-chart {
-  width: 500px;
-  min-width: 500px;
-}
-
-.wide-chart {
-  height: 30%;
-  width:100%;
-}
-
-.long-chart {
-  height: 30%;
-  width:70%;
-  bottom: 0;
-  position:absolute;
 }
 
 .row,

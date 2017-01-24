@@ -24,6 +24,6 @@ export default class HighChartComponent extends Component {
     }
 
     render() {
-        return <ReactHighcharts config={this.state.highChartConfig} ref="chart"></ReactHighcharts>;
+        return <div className="chart"><ReactHighcharts config={this.state.highChartConfig} ref="chart"></ReactHighcharts></div>;
     }
 }

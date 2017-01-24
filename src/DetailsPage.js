@@ -7,10 +7,9 @@ export default class DetailsPage extends Component {
         super(props)
         this.state = {
             org: props.org,
-            charts: props.charts
+            charts: ["spend", "logins", "spendPerService"]
         }
         this.handleClick = this.handleClick.bind(this);
-        this.render1Chart = this.render1Chart.bind(this);
     }
 
     handleClick(chartList) {
@@ -23,7 +22,7 @@ export default class DetailsPage extends Component {
         return (
             <div>
                 <div className="row">
-                    <div className="column column-12"><HighChartComponent org={this.state.org} graphType={this.state.charts[0]}/></div>
+                    <div className="column column-12"><HighChartComponent org={this.state.org} graphType={this.state.charts[10]}/></div>
                 </div>
             </div>
         );
@@ -33,10 +32,8 @@ export default class DetailsPage extends Component {
         return (
             <div>
                 <div className="row">
-                    <div className="column column-6"><HighChartComponent org={this.state.org} graphType={this.state.charts[0]}/>
-                    </div>
-                    <div className="column column-6"><HighChartComponent org={this.state.org} graphType={this.state.charts[1]}/>
-                    </div>
+                    <div className="column column-6"><HighChartComponent org={this.state.org} graphType={this.state.charts[0]}/></div>
+                    <div className="column column-6"><HighChartComponent org={this.state.org} graphType={this.state.charts[1]}/></div>
                 </div>
             </div>
         );
@@ -46,13 +43,11 @@ export default class DetailsPage extends Component {
         return (
             <div>
                 <div className="row">
-                    <div className="column column-6"><HighChartComponent org={this.state.org} graphType={this.state.charts[0]}/>
-                    </div>
-                    <div className="column column-6"><HighChartComponent org={this.state.org} graphType={this.state.charts[1]}/>
-                    </div>
+                    <div className="column column-6"><HighChartComponent className="chart" org={this.state.org} graphType={this.state.charts[0]}/></div>
+                    <div className="column column-6"><HighChartComponent className="chart" org={this.state.org} graphType={this.state.charts[1]}/></div>
                 </div>
                 <div className="row">
-                    <div className="column column-12"><HighChartComponent org={this.state.org} graphType={this.state.charts[2]}/>
+                    <div className="column column-12"><HighChartComponent className="chart" org={this.state.org} graphType={this.state.charts[2]}/>
                     </div>
                 </div>
             </div>
@@ -61,15 +56,15 @@ export default class DetailsPage extends Component {
 
     renderCharts() {
 
-        if(this.state.charts.length === 1) {
+        if (this.state.charts.length === 1) {
             return this.render1Chart()
         }
 
-        if(this.state.charts.length === 2) {
+        if (this.state.charts.length === 2) {
             return this.render2Charts()
         }
 
-        if(this.state.charts.length === 3) {
+        if (this.state.charts.length === 3) {
             return this.render3Charts()
         }
     }
@@ -78,7 +73,7 @@ export default class DetailsPage extends Component {
         return (
             <div className="row">
                 <div className="column column-2">
-                    <div className="left-column"><Sidebar org={this.state.org} click={this.handleClick}/></div>
+                    <div className="sidebar"><Sidebar org={this.state.org} click={this.handleClick}/></div>
                 </div>
                 <div className="column column-10">{this.renderCharts()}</div>
             </div>
