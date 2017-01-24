@@ -13,7 +13,9 @@ export default class HighChartComponent extends Component {
     }
 
     componentWillMount() {
-        var request = new Request("http://localhost:8080/v1/org/" + this.state.org.id + "/" + this.state.graphType);
+        var request = new Request("http://localhost:8080/v1/org"
+            + "/" + this.state.org.id
+            + "/graph/" + this.state.graphType);
 
         fetch(request)
             .then(response => response.json())
@@ -24,6 +26,10 @@ export default class HighChartComponent extends Component {
     }
 
     render() {
-        return <div className="chart"><ReactHighcharts config={this.state.highChartConfig} ref="chart"></ReactHighcharts></div>;
+        return (
+            <div className="chart">
+                <ReactHighcharts config={this.state.highChartConfig} ref="chart"/>
+            </div>
+        );
     }
 }
