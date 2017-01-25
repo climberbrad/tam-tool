@@ -7,7 +7,7 @@ export default class DetailsPage extends Component {
         super(props)
         this.state = {
             org: props.org,
-            charts: ["spend", "logins", "spendPerService"]
+            charts: ["totalSpend", "logins", "spendPerService"]
         }
         this.handleClick = this.handleClick.bind(this);
     }

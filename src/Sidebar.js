@@ -24,10 +24,10 @@ export default class Sidebar extends Component {
         return (
             <div className="side-bar">
                 <div className="organization-name">{this.state.org.name}</div>
-                <div className="stat" onClick={() => this.props.click(["spend", "logins", "spendPerService"])}>Member since <div className="org-data">{this.state.orgDetails.subscriptionStartsAt}</div></div>
+                <div className="stat" onClick={() => this.props.click(["totalSpend", "logins", "spendPerService"])}>Member since <div className="org-data">{this.state.orgDetails.subscriptionStartsAt}</div></div>
 
                 <div className="side-bar-header">AWS Usage</div>
-                <div className="stat" onClick={() => this.props.click(["spendPerService"])}>AWS servics <div className="org-data">TBD</div></div>
+                <div className="stat" onClick={() => this.props.click(["spendPerService"])}>AWS servics <div className="org-data">{this.state.orgDetails.numAwsServices}</div></div>
                 <div className="stat" onClick={this.handleClick}>Total accounts<div className="org-data">{this.state.orgDetails.numAccounts}</div></div>
                 <div className="stat">Total users <div className="org-data">TBD</div></div>
                 <div className="stat">Payer Accounts <div className="org-data">TBD</div></div>
