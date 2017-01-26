@@ -51,7 +51,7 @@ export default class Sidebar extends Component {
                 <div className="stat">RI's expiring (30 days) <div className="org-data">{this.state.orgDetails.numRisExpiringNextMonth}</div></div>
                 <div className="stat">RI Planner executed <div className="org-data">{this.state.orgDetails.planLastExecuted}</div></div>
                 <div className="stat">Savings from mods <div className="org-data">$TBD</div></div>
-                <div className="stat">Underutilized RIs <div className="org-data">TBD</div></div>
+                <div className="stat">Underutilized RIs <div className="org-data">{this.state.orgDetails.underutilized}</div></div>
             </div>
         )
     }
