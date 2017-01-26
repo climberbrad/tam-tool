@@ -7,6 +7,7 @@ export default class HighChartComponent extends Component {
         super(props)
         this.state = {
             org: props.org,
+            graphName: props.graphName,
             graphType: props.graphType,
             highChartConfig: {}
         }
@@ -15,7 +16,8 @@ export default class HighChartComponent extends Component {
     componentWillMount() {
         var request = new Request("http://localhost:8080/v1/org"
             + "/" + this.state.org.id
-            + "/graph/" + this.state.graphType);
+            + "/" + this.state.graphType
+            + "/" + this.state.graphName);
 
         fetch(request)
             .then(response => response.json())

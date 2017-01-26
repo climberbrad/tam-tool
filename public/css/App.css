@@ -4,7 +4,7 @@
 
 .header {
   background-color: #28A9E1;
-  height: 48px;
+  height: 68px;
 }
 
 .chart {
@@ -26,7 +26,7 @@
 
 .bottom-aligner {
   display: inline-block;
-  height: 20px;
+  height: 38px;
   vertical-align: bottom;
   width: 0px;
 }
