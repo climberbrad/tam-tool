@@ -22,13 +22,13 @@ export default class Sidebar extends Component {
 
     render() {
         return (
-            <div className="side-bar">
+            <div>
                 <div className="organization-name">{this.state.org.name}</div>
                 <div className="stat" onClick={() => this.props.click(["totalSpend", "totalLogins", "totalSpendPerService"], "linegraph")}>Member since <div className="org-data">{this.state.orgDetails.subscriptionStartsAt}</div></div>
 
                 <div className="side-bar-header">AWS Usage</div>
                 <div className="stat" onClick={() => this.props.click(["oneMonthTotalSpend"], "linegraph")}>Servics <div className="org-data">{this.state.orgDetails.numAwsServices}</div></div>
-                <div className="stat">Accounts<div className="org-data">{this.state.orgDetails.numAccounts}</div></div>
+                <div className="stat" onClick={() => this.props.click(["accounts"], "linegraph")}>Accounts<div className="org-data">{this.state.orgDetails.numAccounts}</div></div>
                 <div className="stat">Users <div className="org-data">TBD</div></div>
                 <div className="stat">Payer Accounts <div className="org-data">TBD</div></div>
                 <div className="stat">Linked Accounts <div className="org-data">TBD</div></div>

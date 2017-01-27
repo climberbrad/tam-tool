@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Sidebar from './Sidebar';
+import Accounts from './Accounts';
 import HighChartComponent from './HighChartComponent';
 
 export default class DetailsPage extends Component {
@@ -56,7 +57,21 @@ export default class DetailsPage extends Component {
         );
     }
 
+    renderAccountsPage() {
+        return (
+            <div>
+                <div className="row">
+                    <div className="column column-12"><Accounts org={this.state.org}/></div>
+                </div>
+            </div>
+        );
+    }
+
     renderCharts() {
+
+        if(this.state.graphName == "accounts") {
+            return this.renderAccountsPage()
+        }
 
         if (this.state.graphName.length === 1) {
             return this.render1Chart()
