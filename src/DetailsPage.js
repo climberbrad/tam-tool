@@ -88,7 +88,7 @@ export default class DetailsPage extends Component {
 
     render() {
         return (
-            <div className="row">
+            <div className="row" id="details-background">
                 <div className="column column-2">
                     <div className="sidebar"><Sidebar org={this.state.org} click={this.handleClick}/></div>
                 </div>
