@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import checkbox from '../public/img/checkmark.png';
-import x from '../public/img/x.png';
-import Section from './Section';
+import LinkedAccount from './LinkedAccount';
 
 export default class Accounts extends Component {
     constructor(props) {
@@ -37,7 +35,7 @@ export default class Accounts extends Component {
     buildSection(payerAccount, index) {
         var openStatus = (index === this.state.openSectionIndex);
         /* Remember to add a 'key'. React wants you to add an identifier when you instantiate a component multiple times */
-        return <Section key={payerAccount.payer_account_id} id={index} payerAccount={payerAccount} toggleOne={this.toggleOne} open={openStatus} />
+        return <LinkedAccount key={payerAccount.payer_account_id} id={index} payerAccount={payerAccount} toggleOne={this.toggleOne} open={openStatus} />
     }
 
     buildSections(payerAccounts) {
@@ -45,45 +43,43 @@ export default class Accounts extends Component {
         return sections;
     }
 
-    renderAccounts() {
-            return (<div className="account_data">
+    render() {
+
+        return (<div>
                 {
-                    this.state.accounts.map(payerAccount => {
-                        return (<div>
-                            <div className="payer_account_header">Payer Account: {payerAccount.payer_account_id} {payerAccount.nick_name}</div>
-                            {
-
-                                payerAccount.accounts.map(linkedAccount => {
-                                    return (<div>
-                                                <div className="linked_account_header">Linked Account: {linkedAccount.account_id} {linkedAccount.nick_name}</div>
-
-                                        {
-                                            linkedAccount.permissions && linkedAccount.permissions.map(permission => {
-                                                return (<div className="row">
-                                                    <div className="column column-10"><div className="permissions">{permission}</div></div>
-                                                    <div className="column column-2"><div className="permissions_data"><img src={checkbox} className="checkmark" alt="logo"/></div></div>
-                                                </div>);
-                                            })
-                                        }
-
-                                    </div>);
-                                })
-
-                            }
-                        </div>)
-                    })
+                    this.state.accounts.length > 0 && (<div className="container">{this.buildSections(this.state.accounts)}</div>)
                 }
             </div>);
     }
 
-    render() {
-
-        return (
-            <div>
-                {
-                    this.state.accounts.length > 0 && (<div className="container">{this.buildSections(this.state.accounts)}</div>)
-                }
-            </div>
-        );
-    }
+    // renderAccounts() {
+    //         return (<div className="account_data">
+    //             {
+    //                 this.state.accounts.map(payerAccount => {
+    //                     return (<div>
+    //                         <div className="payer_account_header">Payer Account: {payerAccount.payer_account_id} {payerAccount.nick_name}</div>
+    //                         {
+    //
+    //                             payerAccount.accounts.map(linkedAccount => {
+    //                                 return (<div>
+    //                                             <div className="linked_account_header">Linked Account: {linkedAccount.account_id} {linkedAccount.nick_name}</div>
+    //
+    //                                     {
+    //                                         linkedAccount.permissions && linkedAccount.permissions.map(permission => {
+    //                                             return (<div className="row">
+    //                                                 <div className="column column-10"><div className="permissions">{permission}</div></div>
+    //                                                 <div className="column column-2"><div className="permissions_data"><img src={checkbox} className="checkmark" alt="logo"/></div></div>
+    //                                             </div>);
+    //                                         })
+    //                                     }
+    //
+    //                                 </div>);
+    //                             })
+    //
+    //                         }
+    //                     </div>)
+    //                 })
+    //             }
+    //         </div>);
+    // }
 }

@@ -95,11 +95,13 @@
 }
 
 .payer_account_header {
+    cursor: pointer;
     background: rgba(27, 163, 232, 0.5); /* Black color with 50% alpha/opacity */
     display: block;
 }
 
 .linked_account_header {
+    cursor: pointer;
     background: rgba(220, 224, 226, 0.5); /* Black color with 50% alpha/opacity */
     font-family: "Apple SD Gothic Neo";
     font-size: 16px;
