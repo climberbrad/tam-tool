@@ -49,7 +49,7 @@ export default class Accounts extends Component {
                     this.state.accounts.length > 0 &&
                     this.state.accounts.map(payerAccount => {
                         return (<div>
-                            <div className="payer_account_header">Payer Account {payerAccount.nick_name} {payerAccount.payer_account_id} </div>
+                            <div className="payer_account_header">Payer Account {payerAccount.nick_name} <div className="account_identifier">{payerAccount.payer_account_id}</div></div>
                             {
                                 payerAccount.accounts && this.buildSections(payerAccount.accounts)
 

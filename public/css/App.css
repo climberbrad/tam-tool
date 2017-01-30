@@ -3,7 +3,9 @@
 }
 
 .checkmark {
-    height: 25px;
+    height: 18px;
+    float: left;
+    padding: 0px 5px 0px 2px;
 }
 
 .header {
@@ -98,6 +100,7 @@
     cursor: pointer;
     background: rgba(27, 163, 232, 0.5); /* Black color with 50% alpha/opacity */
     display: block;
+    padding: 2px 2px 2px 2px;
 }
 
 .linked_account_header {
@@ -139,8 +142,20 @@
     transition: height 0.3s ease-in;
 }
 
-.permissions_data {
+.account_name {
+    padding: 0px 15px 0px 15px;
+}
+
+.account_identifier {
     float: right;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
 }
 
 .row,
