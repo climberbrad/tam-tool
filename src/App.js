@@ -16,11 +16,19 @@ class App extends Component {
         }
 
         this.clickSearchResult = this.clickSearchResult.bind(this)
+        this.resetSelectedOrg = this.resetSelectedOrg.bind(this)
     }
 
     clickSearchResult(org) {
         this.setState({
             selectedOrg: org
+        })
+    }
+
+    resetSelectedOrg() {
+        console.log('got here')
+        this.setState({
+            selectedOrg: null
         })
     }
 
@@ -43,7 +51,7 @@ class App extends Component {
                             <img src={logo} className="logo" alt="logo"/>
                         </div>
                         <div className="column column-9">
-                            <div className="search-box"><Search click={this.clickSearchResult}/></div>
+                            <div className="search-box"><Search resetSelectedOrg={this.resetSelectedOrg} click={this.clickSearchResult}/></div>
                         </div>
                     </div>
                 </div>

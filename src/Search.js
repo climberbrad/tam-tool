@@ -33,6 +33,7 @@ export default class Search extends Component {
             found: false,
             searchTerm: event.target.value.substr(0, 20)
         });
+        this.props.resetSelectedOrg()
     }
 
     handleClick(org) {
