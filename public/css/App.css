@@ -15,7 +15,7 @@
 
 .chart {
     border: 1px solid #cccccc;
-    margin: 5px 0px 10px 25px;
+    margin: 5px;
 }
 
 #details-background {
@@ -76,8 +76,8 @@
     background: #ededed;
 }
 
-.sidebar {
-    min-width: 235px;
+#sidebar {
+    min-width: 165px;
     float: left;
     padding: 0px 10px;
     background-color: #FFFFFF;

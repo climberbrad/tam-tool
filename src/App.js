@@ -42,7 +42,7 @@ class App extends Component {
                         <div className="column column-2">
                             <img src={logo} className="logo" alt="logo"/>
                         </div>
-                        <div className="column column-8">
+                        <div className="column column-9">
                             <div className="search-box"><Search click={this.clickSearchResult}/></div>
                         </div>
                     </div>

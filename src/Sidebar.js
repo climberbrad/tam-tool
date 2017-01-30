@@ -32,8 +32,8 @@ export default class Sidebar extends Component {
                 <div className="stat">Users <div className="org-data">TBD</div></div>
                 <div className="stat">Payer Accounts <div className="org-data">TBD</div></div>
                 <div className="stat">Linked Accounts <div className="org-data">TBD</div></div>
-                <div className="stat">Spend this month <div className="org-data">TBD and delta</div></div>
-                <div className="stat">Tagged inventory percent <div className="org-data">%TBD</div></div>
+                <div className="stat">Spend this month <div className="org-data">TBD</div></div>
+                <div className="stat">Tagged inventory <div className="org-data">%TBD</div></div>
 
                 <div className="side-bar-header">Cloudability Usage</div>
                 <div className="stat">Last Login <div className="org-data">{this.state.orgDetails.lastLogin}</div></div>
@@ -45,11 +45,11 @@ export default class Sidebar extends Component {
 
                 <div className="side-bar-header">Reservations</div>
                 <div className="stat">Total Reservations <div className="org-data">{this.state.orgDetails.numReservations}</div></div>
-                <div className="stat">RI Planner page loads (30 days) <div className="org-data">{this.state.orgDetails.numPlannerPageLoads}</div></div>
+                <div className="stat">RI Planner use (30 days) <div className="org-data">{this.state.orgDetails.numPlannerPageLoads}</div></div>
                 <div className="stat">RI Planner Savings <div className="org-data">${this.state.orgDetails.savingsFromPlan}</div></div>
                 <div className="stat">Last RI purchase <div className="org-data">{this.state.orgDetails.dateOfLastRiPurchase}</div></div>
-                <div className="stat">RI's expiring (30 days) <div className="org-data">{this.state.orgDetails.numRisExpiringNextMonth}</div></div>
-                <div className="stat">RI Planner executed <div className="org-data">{this.state.orgDetails.planLastExecuted}</div></div>
+                <div className="stat">Expiring (30 days) <div className="org-data">{this.state.orgDetails.numRisExpiringNextMonth}</div></div>
+                <div className="stat">Planner executed <div className="org-data">{this.state.orgDetails.planLastExecuted}</div></div>
                 <div className="stat">Savings from mods <div className="org-data">$TBD</div></div>
                 <div className="stat">Underutilized RIs <div className="org-data">{this.state.orgDetails.underutilized}</div></div>
             </div>
