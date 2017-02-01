@@ -30,8 +30,8 @@ export default class Sidebar extends Component {
                 <div className="stat" onClick={() => this.props.click(["oneMonthTotalSpend"], "linegraph")}>Servics <div className="org-data">{this.state.orgDetails.numAwsServices}</div></div>
                 <div className="stat" onClick={() => this.props.click(["accounts"], "linegraph")}>Accounts<div className="org-data">{this.state.orgDetails.numAccounts}</div></div>
                 <div className="stat">Users <div className="org-data">TBD</div></div>
-                <div className="stat">Payer Accounts <div className="org-data">TBD</div></div>
-                <div className="stat">Linked Accounts <div className="org-data">TBD</div></div>
+                <div className="stat">Payer Accounts <div className="org-data">{this.state.orgDetails.numPayerAccounts}</div></div>
+                <div className="stat">Linked Accounts <div className="org-data">{this.state.orgDetails.numLinkedAccounts}</div></div>
                 <div className="stat">Spend this month <div className="org-data">TBD</div></div>
                 <div className="stat">Tagged inventory <div className="org-data">%TBD</div></div>
 
