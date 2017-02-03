@@ -6,14 +6,13 @@ export default class Sidebar extends Component {
         this.state = {
             org: props.org,
             orgDetails: {},
-            accounts: props.accounts,
-            numPayerAccounts: 0,
-            numLinkedAccounts: 0
+            consolidatedAccount: props.accounts
         }
     }
 
     componentWillMount() {
-        var request = new Request("http://localhost:8080/v1/org/" + this.state.org.id + "/details");
+        var accountsList = this.getCommaSeparatedAccounts();
+        var request = new Request("http://localhost:8080/v1/org/" + this.state.org.id + "/details?accountIds=" + accountsList);
 
         fetch(request)
             .then(response => response.json())
@@ -22,16 +21,34 @@ export default class Sidebar extends Component {
                 console.log('Request failed', error)
             });
 
-        this.getAccountStats()
     }
 
-    getAccountStats() {
-        this.state.accounts.map(payerAccount => {
-            this.setState({
-                numPayerAccounts: this.state.accounts.length
-            });
-            this.setState({numLinkedAccounts: payerAccount.accounts.length})
+    getPayerAccountIdentifiers() {
+        return this.state.consolidatedAccount.map(payerAccount => {
+                return payerAccount.account_id
         });
+    }
+
+    getLinkedAccountIdentifiers() {
+        var linkedAccounts = []
+        this.state.consolidatedAccount.map((payerAccount, pIndex) => {
+            payerAccount.accounts.map((linkedAccount, lIndex) => {
+                linkedAccounts.push(linkedAccount.account_id)
+            })
+        });
+
+        return linkedAccounts
+    }
+
+    getCommaSeparatedAccounts() {
+        var accountList = ""
+        this.state.consolidatedAccount.map((payerAccount, pIndex) => {
+            accountList = accountList + payerAccount.payer_account_id
+            payerAccount.accounts.map((linkedAccount, lIndex) => {
+                accountList = accountList + "," + linkedAccount.account_id
+            })
+        });
+        return accountList
     }
 
     render() {
@@ -43,9 +60,12 @@ export default class Sidebar extends Component {
                 <div className="side-bar-header">AWS Usage</div>
                 <div className="stat" onClick={() => this.props.click(["oneMonthTotalSpend"], "linegraph")}>Servics <div className="org-data">{this.state.orgDetails.numAwsServices}</div></div>
                 <div className="stat">Users <div className="org-data">TBD</div></div>
-                <div className="stat" onClick={() => this.props.click(["accounts"], "linegraph")}>Accounts<div className="org-data">{this.state.numPayerAccounts + this.state.numLinkedAccounts}</div></div>
-                <div className="stat">Payer Accounts <div className="org-data">{this.state.numPayerAccounts}</div></div>
-                <div className="stat">Linked Accounts <div className="org-data">{this.state.numLinkedAccounts}</div></div>
+
+                <div className="stat" onClick={() => this.props.click(["accounts"], "linegraph")}>Accounts<div className="org-data"></div></div>
+                <div className="stat">Payer Accounts <div className="org-data">{this.getPayerAccountIdentifiers().length}</div></div>
+                <div className="stat">Linked Accounts <div className="org-data">{this.getLinkedAccountIdentifiers().length}</div></div>
+
+
                 <div className="stat">Spend this month <div className="org-data">TBD</div></div>
                 <div className="stat">Tagged inventory <div className="org-data">%TBD</div></div>
 
