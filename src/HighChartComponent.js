@@ -9,7 +9,8 @@ export default class HighChartComponent extends Component {
             org: props.org,
             graphName: props.graphName,
             graphType: props.graphType,
-            highChartConfig: {}
+            highChartConfig: {},
+            consolidatedAccount: props.consolidatedAccount
         }
     }
 
@@ -19,7 +20,14 @@ export default class HighChartComponent extends Component {
             + "/" + this.state.graphType
             + "/" + this.state.graphName);
 
-        fetch(request)
+        fetch(request, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(this.state.consolidatedAccount)
+        })
             .then(response => response.json())
             .then(items => this.setState({highChartConfig: items}))
             .catch(function (error) {

@@ -27,6 +27,7 @@ export default class DetailsPage extends Component {
             <div>
                 <div className="row">
                     <div className="column column-12"><HighChartComponent key={this.state.graphName[0]}
+                                                                          consolidatedAccount={this.props.accounts}
                                                                           org={this.state.org}
                                                                           graphType={this.state.graphType}
                                                                           graphName={this.state.graphName[0]}/></div>
@@ -40,6 +41,7 @@ export default class DetailsPage extends Component {
             <div>
                 <div className="row">
                     <div className="column column-6"><HighChartComponent key={this.state.graphName[0]}
+                                                                         consolidatedAccount={this.props.accounts}
                                                                          org={this.state.org}
                                                                          graphType={this.state.graphType}
                                                                          graphName={this.state.graphName[0]}/></div>
@@ -57,16 +59,19 @@ export default class DetailsPage extends Component {
             <div>
                 <div className="row">
                     <div className="column column-6"><HighChartComponent key={this.state.graphName[0]} className="chart"
+                                                                         consolidatedAccount={this.props.accounts}
                                                                          org={this.state.org}
                                                                          graphType={this.state.graphType}
                                                                          graphName={this.state.graphName[0]}/></div>
                     <div className="column column-6"><HighChartComponent key={this.state.graphName[1]} className="chart"
+                                                                         consolidatedAccount={this.props.accounts}
                                                                          org={this.state.org}
                                                                          graphType={this.state.graphType}
                                                                          graphName={this.state.graphName[1]}/></div>
                 </div>
                 <div className="row">
                     <div className="column column-12"><HighChartComponent key={this.state.graphName[2]}
+                                                                          consolidatedAccount={this.props.accounts}
                                                                           className="chart" org={this.state.org}
                                                                           graphType={this.state.graphType}
                                                                           graphName={this.state.graphName[2]}/>

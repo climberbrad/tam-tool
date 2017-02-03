@@ -11,10 +11,17 @@ export default class Sidebar extends Component {
     }
 
     componentWillMount() {
-        var accountsList = this.getCommaSeparatedAccounts();
-        var request = new Request("http://localhost:8080/v1/org/" + this.state.org.id + "/details?accountIds=" + accountsList);
 
-        fetch(request)
+        var request = new Request("http://localhost:8080/v1/org/" + this.state.org.id + "/details");
+
+        fetch(request, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(this.state.consolidatedAccount)
+        })
             .then(response => response.json())
             .then(json => this.setState({orgDetails: json}))
             .catch(function (error) {
