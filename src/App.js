@@ -12,7 +12,8 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            selectedOrg: null
+            selectedOrg: null,
+            accounts: {}
         }
 
         this.clickSearchResult = this.clickSearchResult.bind(this)
@@ -23,6 +24,7 @@ class App extends Component {
         this.setState({
             selectedOrg: org
         })
+        this.getAccounts(org.id)
     }
 
     resetSelectedOrg() {
@@ -36,10 +38,21 @@ class App extends Component {
         return (
             <div className="row">
                 <div className="column column-12">
-                    <DetailsPage org={this.state.selectedOrg}/>
+                    <DetailsPage accounts={this.state.accounts} org={this.state.selectedOrg}/>
                 </div>
             </div>
         );
+    }
+
+    getAccounts(orgId) {
+        var request = new Request("http://localhost:8080/v1/org/" + orgId + "/accounts");
+
+        fetch(request)
+            .then(response => response.json())
+            .then(json => this.setState({accounts: json}))
+            .catch(function (error) {
+                console.log('Request failed', error)
+            });
     }
 
     render() {
@@ -51,7 +64,8 @@ class App extends Component {
                             <img src={logo} className="logo" alt="logo"/>
                         </div>
                         <div className="column column-9">
-                            <div className="search-box"><Search resetSelectedOrg={this.resetSelectedOrg} click={this.clickSearchResult}/></div>
+                            <div className="search-box"><Search resetSelectedOrg={this.resetSelectedOrg}
+                                                                click={this.clickSearchResult}/></div>
                         </div>
                     </div>
                 </div>

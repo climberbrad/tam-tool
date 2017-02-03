@@ -8,6 +8,7 @@ export default class DetailsPage extends Component {
         super(props)
         this.state = {
             org: props.org,
+            accounts: props.accounts,
             graphName: ["totalSpend", "totalLogins", "totalSpendPerService"],
             graphType: "linegraph"
         }
@@ -105,7 +106,7 @@ export default class DetailsPage extends Component {
     render() {
         return (
             <div className="row" id="details-background">
-                <div className="column column-2" id="sidebar"><Sidebar org={this.state.org} click={this.handleClick}/></div>
+                <div className="column column-2" id="sidebar"><Sidebar accounts={this.props.accounts} org={this.state.org} click={this.handleClick}/></div>
                 <div className="column column-10">{this.renderCharts()}</div>
             </div>
         );

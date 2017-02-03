@@ -15,7 +15,7 @@
 
 .chart {
     border: 1px solid #cccccc;
-    margin: 5px;
+    margin: 3px;
 }
 
 #details-background {
@@ -35,10 +35,7 @@
 }
 
 .bottom-aligner {
-    display: inline-block;
-    height: 38px;
-    vertical-align: bottom;
-    width: 0px;
+    height: 39px;
 }
 
 #search-result {

@@ -5,7 +5,10 @@ export default class Sidebar extends Component {
         super(props)
         this.state = {
             org: props.org,
-            orgDetails: {}
+            orgDetails: {},
+            accounts: props.accounts,
+            numPayerAccounts: 0,
+            numLinkedAccounts: 0
         }
     }
 
@@ -18,6 +21,17 @@ export default class Sidebar extends Component {
             .catch(function (error) {
                 console.log('Request failed', error)
             });
+
+        this.getAccountStats()
+    }
+
+    getAccountStats() {
+        this.state.accounts.map(payerAccount => {
+            this.setState({
+                numPayerAccounts: this.state.accounts.length
+            });
+            this.setState({numLinkedAccounts: payerAccount.accounts.length})
+        });
     }
 
     render() {
@@ -28,10 +42,10 @@ export default class Sidebar extends Component {
 
                 <div className="side-bar-header">AWS Usage</div>
                 <div className="stat" onClick={() => this.props.click(["oneMonthTotalSpend"], "linegraph")}>Servics <div className="org-data">{this.state.orgDetails.numAwsServices}</div></div>
-                <div className="stat" onClick={() => this.props.click(["accounts"], "linegraph")}>Accounts<div className="org-data">{this.state.orgDetails.numAccounts}</div></div>
                 <div className="stat">Users <div className="org-data">TBD</div></div>
-                <div className="stat">Payer Accounts <div className="org-data">{this.state.orgDetails.numPayerAccounts}</div></div>
-                <div className="stat">Linked Accounts <div className="org-data">{this.state.orgDetails.numLinkedAccounts}</div></div>
+                <div className="stat" onClick={() => this.props.click(["accounts"], "linegraph")}>Accounts<div className="org-data">{this.state.numPayerAccounts + this.state.numLinkedAccounts}</div></div>
+                <div className="stat">Payer Accounts <div className="org-data">{this.state.numPayerAccounts}</div></div>
+                <div className="stat">Linked Accounts <div className="org-data">{this.state.numLinkedAccounts}</div></div>
                 <div className="stat">Spend this month <div className="org-data">TBD</div></div>
                 <div className="stat">Tagged inventory <div className="org-data">%TBD</div></div>
 
