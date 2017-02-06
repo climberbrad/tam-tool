@@ -27,7 +27,6 @@ export default class Sidebar extends Component {
             .catch(function (error) {
                 console.log('Request failed', error)
             });
-
     }
 
     getPayerAccountIdentifiers() {

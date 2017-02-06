@@ -56,7 +56,7 @@ export default class Search extends Component {
                        value={this.state.searchTerm}
                        onChange={this.updateSearch.bind(this)}/>
                 {
-                    this.state.searchTerm !== '' && this.state.found == false &&
+                    this.state.searchTerm != '' && this.state.found == false &&
                     filteredContacts.map((org) => {
                         return <SearchResult org={org} key={org.id} click={this.handleClick}/>
                     })
