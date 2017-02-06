@@ -3,25 +3,6 @@ import checkbox from '../public/img/checkmark.png';
 import ex from '../public/img/x.png';
 
 
-var permissions = [
-    "DESCRIBE_DYNAMO_TABLE",
-    "DESCRIBE_EC2_VOLUMES",
-    "DESCRIBE_IMAGES",
-    "DESCRIBE_INSTANCES",
-    "DESCRIBE_RDS_DB_CLUSTERS",
-    "DESCRIBE_RDS_DB_INSTANCES",
-    "DESCRIBE_REDSHIFT_CLUSTERS",
-    "DESCRIBE_RESERVED_CACHE_NODES",
-    "DESCRIBE_RESERVED_DB_INSTANCES",
-    "DESCRIBE_RESERVED_EC2_INSTANCES",
-    "DESCRIBE_RESERVED_EC2_INSTANCES_MODIFICATIONS",
-    "DESCRIBE_RESERVED_REDSHIFT_NODES",
-    "GET_METRIC_STATS",
-    "LIST_CAR",
-    "LIST_DBR",
-    "LIST_DYNAMO_TABLES"
-]
-
 export default class LinkedAccount extends Component {
     constructor(props) {
         super(props);

@@ -31,15 +31,15 @@ export default class Sidebar extends Component {
 
     getPayerAccountIdentifiers() {
         return this.state.consolidatedAccount.map(payerAccount => {
-                return payerAccount.account_id
+            return payerAccount.account_id
         });
     }
 
     getLinkedAccountIdentifiers() {
         var linkedAccounts = []
         this.state.consolidatedAccount.map((payerAccount, pIndex) => {
-            payerAccount.accounts.map((linkedAccount, lIndex) => {
-                linkedAccounts.push(linkedAccount.account_id)
+            return payerAccount.accounts.map((linkedAccount, lIndex) => {
+                return linkedAccounts.push(linkedAccount.account_id)
             })
         });
 
@@ -49,9 +49,9 @@ export default class Sidebar extends Component {
     getCommaSeparatedAccounts() {
         var accountList = ""
         this.state.consolidatedAccount.map((payerAccount, pIndex) => {
-            accountList = accountList + payerAccount.payer_account_id
-            payerAccount.accounts.map((linkedAccount, lIndex) => {
-                accountList = accountList + "," + linkedAccount.account_id
+            accountList = accountList.concat(payerAccount.payer_account_id)
+            return payerAccount.accounts.map((linkedAccount, lIndex) => {
+                return accountList = accountList + "," + linkedAccount.account_id
             })
         });
         return accountList
@@ -63,7 +63,7 @@ export default class Sidebar extends Component {
                 <div className="organization-name">{this.state.org.name}</div>
                 <div className="stat" onClick={() => this.props.click(["totalSpend", "totalLogins", "totalSpendPerService"], "linegraph")}>Member since <div className="org-data">{this.state.orgDetails.subscriptionStartsAt}</div></div>
 
-                <div className="side-bar-header">AWS Usage</div>
+                <div className="side-bar-header">AWS</div>
                 <div className="stat" onClick={() => this.props.click(["oneMonthTotalSpend"], "linegraph")}>Servics <div className="org-data">{this.state.orgDetails.numAwsServices}</div></div>
                 <div className="stat">Users <div className="org-data">TBD</div></div>
 
@@ -75,7 +75,7 @@ export default class Sidebar extends Component {
                 <div className="stat">Spend this month <div className="org-data">TBD</div></div>
                 <div className="stat">Tagged inventory <div className="org-data">%TBD</div></div>
 
-                <div className="side-bar-header">Cloudability Usage</div>
+                <div className="side-bar-header">Cloudability</div>
                 <div className="stat">Last Login <div className="org-data">{this.state.orgDetails.lastLogin}</div></div>
                 <div className="stat">Last data sync <div className="org-data">{this.state.orgDetails.lastDataSyncDate}</div></div>
                 <div className="stat" onClick={() => this.props.click(["oneMonthLogins"], "linegraph")}>Logins (past 30 days) <div className="org-data">{this.state.orgDetails.numLoginsLastMonth}</div></div>
@@ -86,7 +86,7 @@ export default class Sidebar extends Component {
                 <div className="side-bar-header">Reservations</div>
                 <div className="stat">Total Reservations <div className="org-data">{this.state.orgDetails.numReservations}</div></div>
                 <div className="stat">RI Planner use (30 days) <div className="org-data">{this.state.orgDetails.numPlannerPageLoads}</div></div>
-                <div className="stat">RI Planner Savings <div className="org-data">${this.state.orgDetails.savingsFromPlan}</div></div>
+                <div className="stat">RI Planner Savings <div className="org-data">{this.state.orgDetails.savingsFromPlan}</div></div>
                 <div className="stat">Last RI purchase <div className="org-data">{this.state.orgDetails.dateOfLastRiPurchase}</div></div>
                 <div className="stat">Expiring (30 days) <div className="org-data">{this.state.orgDetails.numRisExpiringNextMonth}</div></div>
                 <div className="stat">Planner executed <div className="org-data">{this.state.orgDetails.planLastExecuted}</div></div>

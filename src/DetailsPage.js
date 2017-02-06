@@ -91,7 +91,7 @@ export default class DetailsPage extends Component {
 
     renderCharts() {
 
-        if (this.state.graphName == "accounts") {
+        if (this.state.graphName === "accounts") {
             return this.renderAccountsPage()
         }
 

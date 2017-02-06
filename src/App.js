@@ -28,7 +28,6 @@ class App extends Component {
     }
 
     resetSelectedOrg() {
-        console.log('got here')
         this.setState({
             selectedOrg: null
         })
