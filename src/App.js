@@ -22,7 +22,9 @@ class App extends Component {
 
     clickSearchResult(org) {
         this.setState({
-            selectedOrg: org
+            selectedOrg: org,
+            accounts: {}
+
         })
         this.getAccounts(org.id)
     }

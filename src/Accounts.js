@@ -7,21 +7,11 @@ export default class Accounts extends Component {
         this.state = {
             org: props.org,
             openSectionIndex: -1,
-            accounts: {}
+            accounts: props.accounts
         }
+
         this.buildSection = this.buildSection.bind(this);
         this.toggleOne = this.toggleOn.bind(this);
-    }
-
-    componentWillMount() {
-        var request = new Request("http://localhost:8080/v1/org/" + this.state.org.id + "/accounts");
-
-        fetch(request)
-            .then(response => response.json())
-            .then(items => this.setState({accounts: items}))
-            .catch(function (error) {
-                console.log('Request failed', error)
-            });
     }
 
     toggleOn(id) {
@@ -48,7 +38,7 @@ export default class Accounts extends Component {
                 {
                     this.state.accounts.length > 0 &&
                     this.state.accounts.map(payerAccount => {
-                        return (<div>
+                        return (<div key={payerAccount.payer_account_id}>
                             <div className="payer_account_header">Payer Account {payerAccount.nick_name} <div className="account_identifier">{payerAccount.payer_account_id}</div></div>
                             {
                                 payerAccount.accounts && this.buildSections(payerAccount.accounts)

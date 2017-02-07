@@ -39,7 +39,7 @@ export default class LinkedAccount extends Component {
                 <div className="sectionContent" style={style}>
                     {
                         this.props.linkedAccount.permissions && this.props.linkedAccount.permissions.map(permission => {
-                            return (<div className="row">
+                            return (<div className="row" key={permission}>
                                 <div className="column column-10">
                                     <div className="permissions">{permission}</div>
                                 </div>

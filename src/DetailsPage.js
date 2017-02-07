@@ -84,14 +84,14 @@ export default class DetailsPage extends Component {
     renderAccountsPage() {
         return (
             <div className="center">
-                <Accounts org={this.state.org}/>
+                <Accounts accounts={this.state.accounts} org={this.state.org}/>
             </div>
         );
     }
 
     renderCharts() {
 
-        if (this.state.graphName === "accounts") {
+        if (this.state.graphName == "accounts") {
             return this.renderAccountsPage()
         }
 
