@@ -36,24 +36,6 @@ export default class DetailsPage extends Component {
         );
     }
 
-    render2Charts() {
-        return (
-            <div>
-                <div className="row">
-                    <div className="column column-6"><HighChartComponent key={this.state.graphName[0]}
-                                                                         consolidatedAccount={this.props.accounts}
-                                                                         org={this.state.org}
-                                                                         graphType={this.state.graphType}
-                                                                         graphName={this.state.graphName[0]}/></div>
-                    <div className="column column-6"><HighChartComponent key={this.state.graphName[1]}
-                                                                         org={this.state.org}
-                                                                         graphType={this.state.graphType}
-                                                                         graphName={this.state.graphName[1]}/></div>
-                </div>
-            </div>
-        );
-    }
-
     render3Charts() {
         return (
             <div>
@@ -97,10 +79,6 @@ export default class DetailsPage extends Component {
 
         if (this.state.graphName.length === 1) {
             return this.render1Chart()
-        }
-
-        if (this.state.graphName.length === 2) {
-            return this.render2Charts()
         }
 
         if (this.state.graphName.length === 3) {
