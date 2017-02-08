@@ -38,7 +38,7 @@ export default class HighChartComponent extends Component {
     render() {
         return (
             <div className="tam-tool-graph">
-                <ReactHighcharts config={this.state.highChartConfig} ref="chart"/>
+                <ReactHighcharts config={this.state.highChartConfig}/>
             </div>
         );
     }

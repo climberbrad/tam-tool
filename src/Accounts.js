@@ -15,7 +15,7 @@ export default class Accounts extends Component {
     }
 
     toggleOn(id) {
-        if(this.state.openSectionIndex === id){
+        if (this.state.openSectionIndex === id) {
             this.setState({openSectionIndex: -1});
         } else {
             this.setState({openSectionIndex: id});
@@ -25,7 +25,8 @@ export default class Accounts extends Component {
     buildSection(linkedAccount, index) {
         var openStatus = (index === this.state.openSectionIndex);
         /* Remember to add a 'key'. React wants you to add an identifier when you instantiate a component multiple times */
-        return <LinkedAccount key={linkedAccount.account_id} id={index} linkedAccount={linkedAccount} toggleOne={this.toggleOne} open={openStatus} />
+        return <LinkedAccount key={linkedAccount.account_id} id={index} linkedAccount={linkedAccount}
+                              toggleOne={this.toggleOne} open={openStatus}/>
     }
 
     buildSections(linkedAccounts) {
@@ -34,19 +35,25 @@ export default class Accounts extends Component {
     }
 
     render() {
-            return (<div className="account_data">
-                {
-                    this.state.accounts.length > 0 &&
-                    this.state.accounts.map(payerAccount => {
-                        return (<div key={payerAccount.payer_account_id}>
-                            <div className="payer_account_header">Payer Account {payerAccount.nick_name} <div className="account_identifier">{payerAccount.payer_account_id}</div></div>
-                            {
-                                payerAccount.accounts && this.buildSections(payerAccount.accounts)
+        return (
+            <div className="center">
+                <div className="account_info_box">
+                    {
+                        this.state.accounts.length > 0 &&
+                        this.state.accounts.map(payerAccount => {
+                            return (<div key={payerAccount.payer_account_id}>
+                                <div className="payer_account_header">Payer Account {payerAccount.nick_name}
+                                    <div className="account_identifier">{payerAccount.payer_account_id}</div>
+                                </div>
+                                {
+                                    payerAccount.accounts && this.buildSections(payerAccount.accounts)
 
-                            }
-                        </div>)
-                    })
-                }
-            </div>);
+                                }
+                            </div>)
+                        })
+                    }
+                </div>
+            </div>
+        );
     }
 }

@@ -103,6 +103,14 @@
     padding: 2px 2px 2px 2px;
 }
 
+.account_info_box {
+    margin-top: 15px;
+    background-color: #FFFFFF;
+    border: 1px solid #aaa;
+    width: 800px;
+    padding: 15px;
+}
+
 .linked_account_header {
     cursor: pointer;
     background: rgba(220, 224, 226, 0.5); /* Black color with 50% alpha/opacity */
