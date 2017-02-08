@@ -3,6 +3,7 @@ import Sidebar from './Sidebar';
 import Accounts from './Accounts';
 import HighChartComponent from './HighChartComponent';
 import Overview from './Overview';
+import Services from './Services';
 
 export default class DetailsPage extends Component {
     constructor(props) {
@@ -16,37 +17,26 @@ export default class DetailsPage extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(graphNames, graphType) {
+    handleClick(graphNames) {
         this.setState({
-            graphName: graphNames,
-            graphType: graphType
+            graphName: graphNames
         });
     }
 
-    render1Chart() {
-        return (
-            <div>
-                <div className="row">
-                    <div className="column column-12">
-                        <HighChartComponent key={this.state.graphName[0]}
-                                            consolidatedAccount={this.props.accounts}
-                                            org={this.state.org}
-                                            graphType={this.state.graphType}
-                                            graphName={this.state.graphName[0]}/></div>
-                </div>
-            </div>
-        );
-    }
-
     renderCharts() {
+
+        if (this.state.graphName == "overview") {
+            return <Overview accounts={this.state.accounts} org={this.state.org}/>
+        }
 
         if (this.state.graphName == "accounts") {
             return <Accounts accounts={this.state.accounts} org={this.state.org}/>
         }
 
-        if (this.state.graphName == "overview") {
-            return <Overview accounts={this.state.accounts} org={this.state.org}/>
+        if (this.state.graphName == "services") {
+            return <Services accounts={this.state.accounts} org={this.state.org}/>
         }
+
     }
 
     render() {
