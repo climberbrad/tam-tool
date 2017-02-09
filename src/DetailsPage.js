@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import Sidebar from './Sidebar';
 import Accounts from './Accounts';
-import HighChartComponent from './HighChartComponent';
 import Overview from './Overview';
 import Services from './Services';
+import PageLoads from './PageLoads';
 
 export default class DetailsPage extends Component {
     constructor(props) {
@@ -35,6 +35,10 @@ export default class DetailsPage extends Component {
 
         if (this.state.graphName == "services") {
             return <Services accounts={this.state.accounts} org={this.state.org}/>
+        }
+
+        if (this.state.graphName == "pageLoads") {
+            return <PageLoads accounts={this.state.accounts} org={this.state.org}/>
         }
 
     }

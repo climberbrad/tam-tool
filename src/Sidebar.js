@@ -81,7 +81,7 @@ export default class Sidebar extends Component {
                 <div className="stat" onClick={() => this.props.click("oneMonthLogins")}>Logins (30 days) <div className="org-data">{this.state.orgDetails.numLoginsLastMonth}</div></div>
                 <div className="stat" onClick={() => this.props.click("twoMonthLogins")}>Logins (60 days) <div className="org-data">{this.state.orgDetails.numLoginsLastTwoMonth}</div></div>
                 <div className="stat">Number of custom reports <div className="org-data">{this.state.orgDetails.numCustomWidgetsCreated}</div></div>
-                <div className="stat" onClick={() => this.props.click(["pageLoads"], "piechart")}>Total page loads (30 days) <div className="org-data">{this.state.orgDetails.numTotalPageLoads}</div></div>
+                <div className="stat" onClick={() => this.props.click("pageLoads")}>Total page loads (30 days) <div className="org-data">{this.state.orgDetails.numTotalPageLoads}</div></div>
                 <div className="stat">RI Planner use (30 days) <div className="org-data">{this.state.orgDetails.numPlannerPageLoads}</div></div>
                 <div className="stat">RI Planner Savings <div className="org-data">{this.state.orgDetails.savingsFromPlan}</div></div>
                 <div className="stat">Planner executed <div className="org-data">{this.state.orgDetails.planLastExecuted}</div></div>
